@@ -1,0 +1,117 @@
+# PASSWORD RESET PROCEDURE (Automated)
+This procedure applies when a user forgets their corporate login password or VPN password.
+
+1. The user must provide a valid 6-digit Employee ID (EID).
+2. The Workflow Agent can run the automated password reset workflow.
+3. A temporary password will be generated and sent to the user's secondary email.
+4. The automated reset takes under 2 minutes.
+5. Escalate the issue if:
+   - the EID is invalid or missing,
+   - the account is locked out,
+   - the reset workflow fails,
+   - the system returns an error.
+6. Escalate as Severity 2 if automation fails.
+
+-------------------------------------------------------------
+
+# EMPLOYEE ACCOUNT CREATION (New Hire Onboarding)
+1. HR must submit and approve the new hire request before account creation.
+2. Username format: first initial + last name (Example: JSmith).
+3. Default access groups:
+   - Global-All-Employees
+   - Intranet-Access
+   - TSLA-Basic-VPN
+4. The account must be provisioned within 4 hours after HR approval.
+5. If account creation takes longer than 4 hours, escalate as Severity 1 to the Identity Management Team.
+
+-------------------------------------------------------------
+
+# VPN CONNECTION FAILURE (Error 789)
+This error means there is a tunneling or network adapter issue.
+
+Standard Fix (Automated):
+1. Run the VPN Fix workflow to:
+   - flush DNS,
+   - reset the network adapter,
+   - restart the VPN network services.
+
+Manual Fix (User Guided):
+1. Open Network Settings.
+2. Go to Adapter Options.
+3. Disable the network adapter.
+4. Re-enable the network adapter.
+5. Reboot the device.
+6. Attempt to reconnect to VPN.
+
+Escalation:
+- If the error returns after automated and manual fixes, escalate to the Network Team.
+
+-------------------------------------------------------------
+
+# TEAMS / OUTLOOK ISSUES (Freezing or Not Syncing)
+Symptoms: freezing, unresponsiveness, missing calendar sync, or app glitches after updates.
+
+Fix Steps:
+1. Restart the device.
+2. Close and reopen the application.
+3. If the issue is persistent:
+   - Perform a soft reboot on the device.
+4. If still failing:
+   - Use the remote client management tool to uninstall and reinstall Teams or Outlook.
+
+Escalation:
+- If errors persist after reinstall, escalate as Severity 3 with logs.
+
+-------------------------------------------------------------
+
+# SOFTWARE UPDATE GUIDANCE (Company Software Center)
+These steps are used to guide a user through installing software updates.
+
+1. Ask the user to save all open work.
+2. Have the user open the “Company Software Center” from the Start menu.
+3. Select the “Updates” tab.
+4. Click “Check for updates”.
+5. Install all “Required” updates.
+6. If a download error appears, follow the corresponding troubleshooting section below.
+
+-------------------------------------------------------------
+
+# SOFTWARE UPDATE FAILURE (Yellow Download Icon)
+A yellow icon means the update is available but not downloading.
+
+Cause:
+- The device is not connected to strong, stable Wi-Fi.
+- Cellular LTE cannot support large update downloads.
+
+Fix Steps:
+1. Move the device closer to a secure Wi-Fi access point (3 or more signal bars).
+2. Confirm that the device is connected to the correct corporate Wi-Fi network.
+3. Retry the update.
+4. Ensure VPN is OFF unless the update specifically requires it.
+
+Escalation:
+- If the download stays yellow/stalled for more than 3 hours on strong Wi-Fi, escalate for manual intervention.
+
+-------------------------------------------------------------
+
+# NETWORK TROUBLESHOOTING (Wi-Fi Dropping / No Internet)
+Use this section for Wi-Fi disconnects or a user saying “I can’t access the Internet.”
+
+Basic Fix Steps:
+1. Confirm the user is connected to the correct corporate Wi-Fi SSID.
+2. Ask the user to toggle Wi-Fi OFF and then ON again.
+3. Ask them to test at least two different websites or applications.
+4. If remote:
+   - Check if VPN is needed for internal applications.
+   - Confirm VPN connection status.
+5. Ask if other users in the same location are experiencing issues:
+   - If YES → likely location-wide issue → escalate to Network Team (Severity 2).
+   - If NO → collect device name and OS for individual troubleshooting.
+6. If issues persist over multiple days, collect logs and create an IT ticket.
+
+-------------------------------------------------------------
+
+# SYSTEM DIAGNOSTICS AND LOGGING
+1. For any IT issue that is escalated, logs from the last 24 hours should be collected first.
+2. Logs must be attached to any ticket sent to a human technician.
+3. For VPN failures, network issues, or repeated app crashes, logs are required before assigning to an engineer.
